@@ -34,13 +34,16 @@ together form a unique identification number of the network into which the phone
 The location module offers APIs to location information related services. Currently, the location has
 one function:
 * gsm_location()
+
 Prerequisite: PyS60 installed
 
 Here is an example of how to use the location package to fetch the location information:
 
->>> import location
->>> print location.gsm_location()
-(525,5,12,55693)
+> import location
+
+> print location.gsm_location()
+
+>(525,5,12,55693)
 
 The place is around Jurong west St65.
 
