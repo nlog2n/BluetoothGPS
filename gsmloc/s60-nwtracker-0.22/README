@@ -1,0 +1,88 @@
+NAME
+    s60-nwtracker - record nearby cell tower and bluetooth information.
+
+SYNOPSIS
+     Phone > My own > Python > Options > Run script > s60-nwtracker.py
+
+DESCRIPTION
+    s60-nwtracker is an application to monitor and record nearby cell tower
+    and bluetooth address information.
+
+    Information may be stored locally to disk or to a network location via
+    HTTP.
+
+    Data is recorded using the following format :
+
+     unix timestamp ";" seconds between polling ";" data type ";" semi-colon separated list of data points
+
+    For example :
+
+     1154709774;60;bt;00:11:24:b8:f0:ed;00:0e:ed:19:2a:64;00:20:e0:84:d1:e5;00:14:51:d4:a5:af
+     1154709916;60;gsm;310;170;235;25373
+     1154709846;60;bt;00:0e:ed:19:2a:64;00:20:e0:84:d1:e5;00:11:24:b8:f0:ed;00:14:51:d4:a5:af
+
+    For GSM (gsm) the data points, in order, are : mobile country code,
+    mobile carrier code, location area code and cell tower ID.
+
+    For Bluetooth (bt) the data points are : a list of Bluetooth addresses.
+
+OPTIONS
+    The following options can be acccessed from the application's Options
+    menu.
+
+  Start recording
+    Start data collection.
+
+  Stop recording
+    Pause data collection.
+
+  Configure dispatcher
+    Tell the application whether data should be written to disk or a remote
+    network location.
+
+  Configure frequency
+    Assign the number of seconds between data collection.
+
+  Configure endpoint
+    Assign the location of a network endpoint to send collected data to.
+
+  Configure credentials
+    Assign a username and password for talking to your network endpoint.
+
+  Flush local log
+    Send data collected in a local log fie to a remote network location.
+
+  Delete local log
+    Delete the local log used for data collection.
+
+REQUIREMENTS
+  Series 60 Python
+    <http://postneo.com/postwiki/moin.cgi/PythonForSeries60>
+
+  PDIS Python extensions
+    <http://pdis.hiit.fi/pdis/download/pdis/>
+
+    (Specifically the socket-y bits but you may as well install all the SIS
+    files in /path/to/pdis-1.0/binaries/symbian)
+
+VERSION
+    0.22
+
+DATE
+    $Date: 2006/09/18 07:27:34 $
+
+AUTHOR
+    Aaron Straup Cope
+
+SEE ALSO
+    <http://www.aaronland.info/weblog/2006/08/04/zebra#watching>
+
+COPYRIGHT
+    Copyright (c) 2006 Aaron Straup Cope. All Rights Reserved.
+
+LICENSE
+    Perl Artistic License.
+
+    This is free software, you may use it and distribute it under the same
+    terms as Perl itself.
+

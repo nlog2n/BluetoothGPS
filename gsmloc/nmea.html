@@ -1,0 +1,1036 @@
+<html><head><title>Glenn Baddeley - GPS - NMEA sentence information</title></head><body alink="#ff0000" bgcolor="#ccffff" link="#0000ff" text="#000000" vlink="#ff00ff">
+<a name="top"></a><h1 align="center"><a name="top">Glenn Baddeley - GPS - NMEA sentence information</a></h1>
+<h2><a name="top">Contents</a></h2>
+<ul>
+<li><a href="#allgp">All $GPxxx sentence codes and short descriptions</a>
+</li><li><a href="#interp">26 interpreted sentences transmitted by GPS unit</a>
+</li><li><a href="#garmin">12 interpreted Garmin proprietary sentences transmitted by GPS unit</a>
+</li><li><a href="#garminreceived">8 interpreted Garmin proprietary sentences received by GPS unit</a>
+</li><li><a href="#latlong">Format of latitudes and longitudes</a>
+</li><li><a href="#refs">References</a>
+</li></ul>
+
+<a name="allgp"></a><p><a name="allgp">[ </a><a href="#top">Top</a> ] [<a href="http://home.pacific.net.au/%7Egnb/gps/index.html">Glenn's GPS Contents Page</a>]
+</p><hr size="3"><h2>All $GPxxx sentence codes and short descriptions</h2>
+<pre><ul>
+<li>$GPAAM - Waypoint Arrival Alarm
+</li><li>$GPALM - GPS Almanac Data
+</li><li>$GPAPA - Autopilot format "A"
+</li><li>$GPAPB - Autopilot format "B"
+</li><li>$GPASD - Autopilot System Data
+</li><li>$GPBEC - Bearing &amp; Distance to Waypoint, Dead Reckoning
+</li><li>$GPBOD - Bearing, Origin to Destination
+</li><li>$GPBWC - Bearing &amp; Distance to Waypoint, Great Circle
+</li><li>$GPBWR - Bearing &amp; Distance to Waypoint, Rhumb Line
+</li><li>$GPBWW - Bearing, Waypoint to Waypoint
+</li><li>$GPDBT - Depth Below Transducer
+</li><li>$GPDCN - Decca Position
+</li><li>$GPDPT - Depth
+</li><li>$GPFSI - Frequency Set Information
+</li><li>$GPGGA - Global Positioning System Fix Data
+</li><li>$GPGLC - Geographic Position, Loran-C
+</li><li>$GPGLL - Geographic Position, Latitude/Longitude
+</li><li>$GPGRS - GPS Range Residuals
+</li><li>$GPGSA - GPS DOP and Active Satellites
+</li><li>$GPGST - GPS Pseudorange Noise Statistics
+</li><li>$GPGSV - GPS Satellites in View
+</li><li>$GPGXA - TRANSIT Position
+</li><li>$GPHDG - Heading, Deviation &amp; Variation
+</li><li>$GPHDT - Heading, True
+</li><li>$GPHSC - Heading Steering Command
+</li><li>$GPLCD - Loran-C Signal Data
+</li><li>$GPMSK - Control for a Beacon Receiver
+</li><li>$GPMSS - Beacon Receiver Status
+</li><li>$GPMTA - Air Temperature (to be phased out)
+</li><li>$GPMTW - Water Temperature
+</li><li>$GPMWD - Wind Direction
+</li><li>$GPMWV - Wind Speed and Angle
+</li><li>$GPOLN - Omega Lane Numbers
+</li><li>$GPOSD - Own Ship Data
+</li><li>$GPR00 - Waypoint active route (not standard)
+</li><li>$GPRMA - Recommended Minimum Specific Loran-C Data
+</li><li>$GPRMB - Recommended Minimum Navigation Information
+</li><li>$GPRMC - Recommended Minimum Specific GPS/TRANSIT Data
+</li><li>$GPROT - Rate of Turn
+</li><li>$GPRPM - Revolutions
+</li><li>$GPRSA - Rudder Sensor Angle
+</li><li>$GPRSD - RADAR System Data
+</li><li>$GPRTE - Routes
+</li><li>$GPSFI - Scanning Frequency Information
+</li><li>$GPSTN - Multiple Data ID
+</li><li>$GPTRF - TRANSIT Fix Data
+</li><li>$GPTTM - Tracked Target Message
+</li><li>$GPVBW - Dual Ground/Water Speed
+</li><li>$GPVDR - Set and Drift
+</li><li>$GPVHW - Water Speed and Heading
+</li><li>$GPVLW - Distance Traveled through the Water
+</li><li>$GPVPW - Speed, Measured Parallel to Wind
+</li><li>$GPVTG - Track Made Good and Ground Speed
+</li><li>$GPWCV - Waypoint Closure Velocity
+</li><li>$GPWNC - Distance, Waypoint to Waypoint
+</li><li>$GPWPL - Waypoint Location
+</li><li>$GPXDR - Transducer Measurements
+</li><li>$GPXTE - Cross-Track Error, Measured
+</li><li>$GPXTR - Cross-Track Error, Dead Reckoning
+</li><li>$GPZDA - UTC Date / Time and Local Time Zone Offset
+</li><li>$GPZFO - UTC &amp; Time from Origin Waypoint
+</li><li>$GPZTG - UTC &amp; Time to Destination Waypoint
+</li></ul></pre>
+
+<a name="interp"></a><p><a name="interp">[</a><a href="#top">Top</a>]
+</p><hr size="3"><h2>26 interpreted sentences transmitted by GPS unit</h2>
+<pre>   <a href="#gpaam">$GPAAM</a> - Waypoint Arrival Alarm
+   <a href="#gpalm">$GPALM</a> - GPS Almanac Data <b>(Can also be received by GPS unit)</b>
+   <a href="#gpapb">$GPAPB</a> - Autopilot format "B"
+   <a href="#gpbod">$GPBOD</a> - Bearing, origin to destination
+   <a href="#gpbwc">$GPBWC</a> - Bearing and distance to waypoint, great circle
+   <a href="#gpgga">$GPGGA</a> - Global Positioning System Fix Data
+   <a href="#gpgll">$GPGLL</a> - Geographic position, latitude / longitude
+   <a href="#gpgrs">$GPGRS</a> - GPS Range Residuals
+   <a href="#gpgsa">$GPGSA</a> - GPS DOP and active satellites 
+   <a href="#gpgst">$GPGST</a> - GPS Pseudorange Noise Statistics
+   <a href="#gpgsv">$GPGSV</a> - GPS Satellites in view
+   <a href="#gphdt">$GPHDT</a> - Heading, True
+   <a href="#gpmsk">$GPMSK</a> - Control for a Beacon Receiver
+   <a href="#gpmss">$GPMSS</a> - Beacon Receiver Status
+   <a href="#gpr00">$GPR00</a> - List of waypoints in currently active route
+   <a href="#gprma">$GPRMA</a> - Recommended minimum specific Loran-C data
+   <a href="#gprmb">$GPRMB</a> - Recommended minimum navigation info
+   <a href="#gprmc">$GPRMC</a> - Recommended minimum specific GPS/TRANSIT data
+   <a href="#gprte">$GPRTE</a> - Routes
+   <a href="#gptrf">$GPTRF</a> - TRANSIT Fix Data
+   <a href="#gpstn">$GPSTN</a> - Multiple Data ID
+   <a href="#gpvbw">$GPVBW</a> - Dual Ground / Water Speed
+   <a href="#gpvtg">$GPVTG</a> - Track made good and ground speed
+   <a href="#gpwpl">$GPWPL</a> - Waypoint location
+   <a href="#gpxte">$GPXTE</a> - Cross-track error, Measured
+   <a href="#gpzda">$GPZDA</a> - UTC Date / Time and Local Time Zone Offset
+</pre>
+
+<p>There is a full list of $GPxxx sentence codes <a href="#allgp">available</a>, without links to format details.
+
+</p><p>[<a href="#top">Top</a>]
+
+</p><hr size="1"><a name="gpaam"></a><h2><a name="gpaam">$GPAAM</a></h2>
+<p><a name="gpaam">Waypoint Arrival Alarm
+</a></p><p><a name="gpaam">This sentence is generated by some units to indicate the Status of arrival (entering the
+arrival circle, or passing the perpendicular of the course line) at the destination waypoint.
+</a></p><pre><a name="gpaam">  $GPAAM,A,A,0.10,N,WPTNME*43
+
+Where:
+    AAM    Arrival Alarm
+    A      Arrival circle entered
+    A      Perpendicular passed
+    0.10   Circle radius
+    N      Nautical miles
+    WPTNME Waypoint name
+    *43    Checksum data
+</a></pre>
+
+<hr size="1"><a name="gpalm"></a><h2><a name="gpalm">$GPALM</a></h2>
+<p><a name="gpalm">GPS Almanac Data
+</a></p><p><a name="gpalm">A set of sentences transmitted by some Garmin units in response 
+to a received $PGRMO,GPALM,1 sentence. It can also be received by
+some GPS units (eg. Garmin GPS 16 and GPS 17) to initialize the 
+stored almanac information in the unit.
+</a></p><p><a name="gpalm">Example 1: $GPALM,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,*CC
+</a></p><pre><a name="gpalm">1 = Total number of sentences in set
+2 = Sentence sequence number in set
+3 = Satellite number
+4 = GPS week number
+5 = Bits 17 to 24 of almanac page indicating SV health
+6 = Eccentricity
+7 = Reference time of almanac
+8 = Inclination angle
+9 = Right ascension rate
+10 = Semi major axis route
+11 = Argument of perigee (omega)
+12 = Ascension node longitude
+13 = Mean anomaly
+14 = af0 clock parameter
+15 = af1 clock parameter
+</a></pre>
+<p><a name="gpalm">Example 2: $GPALM,1,1,15,1159,00,441d,4e,16be,fd5e,a10c9f,4a2da4,686e81,58cbe1,0a4,001*5B
+</a></p><p><table border="1">
+<tbody><tr><th>Field</th><th>Example</th><th>Comments</th></tr>
+<tr><td>Sentence ID</td><td>$GPALM</td><td>&nbsp;</td></tr>
+<tr><td>Number of messages</td><td>1</td><td>Total number of messages in sequence</td></tr>
+<tr><td>Sequence number</td><td>1</td><td>This is first message in sequence</td></tr>
+<tr><td>Satellite PRN</td><td>15</td><td>Unique ID (PRN) of satellite message relates to</td></tr>
+<tr><td>GPS week number</td><td>1159</td><td>&nbsp;</td></tr>
+<tr><td>SV health</td><td>00</td><td>Bits 17-24 of almanac page</td></tr>
+<tr><td>Eccentricity</td><td>441d</td><td>&nbsp;</td></tr>
+<tr><td>Reference time</td><td>4e</td><td>Almanac reference time</td></tr>
+<tr><td>Inclination angle</td><td>16be</td><td>&nbsp;</td></tr>
+<tr><td>Rate of right ascension</td><td>fd5e</td><td>&nbsp;</td></tr>
+<tr><td>Roor of semi-major axis</td><td>a10c9f</td><td>&nbsp;</td></tr>
+<tr><td>Argument of perigee</td><td>4a2da4</td><td>&nbsp;</td></tr>
+<tr><td>Longitude of ascension node</td><td>686e81</td><td>&nbsp;</td></tr>
+<tr><td>Mean anomoly</td><td>58cbe1</td><td>&nbsp;</td></tr>
+<tr><td>F0 clock parameter</td><td>0a4</td><td>&nbsp;</td></tr>
+<tr><td>F1 clock parameter</td><td>001</td><td>&nbsp;</td></tr>
+<tr><td>Checksum</td><td>*5B</td><td>&nbsp;</td></tr>
+</tbody></table></p><p><a name="gpalm">&nbsp;
+
+</a></p><hr size="1"><a name="gpapb"></a><h2><a name="gpapb">$GPAPB</a></h2>
+<p><a name="gpapb">Autopilot format "B"
+</a></p><p><a name="gpapb">This sentence is sent by some
+GPS receivers to allow them to be used to control an autopilot unit.
+This sentence is commonly used by autopilots and contains navigation
+receiver warning flag status, cross-track-error, waypoint arrival
+status, initial bearing from origin waypoint to the destination,
+continuous bearing from present position to destination and
+recommended heading-to-steer to destination waypoint for the active
+navigation leg of the journey.
+</a></p><p><a name="gpapb">Note: Some autopilots, Robertson in particular, misinterpret
+"bearing from origin to destination" as "bearing from present position
+to destination".  This is likely due to the difference between the APB
+sentence and the APA sentence. for the APA sentence this would be the
+correct thing to do for the data in the same field.  APA only differs
+from APB in this one field and APA leaves off the last two fields
+where this distinction is clearly spelled out.  This will result in
+poor performance if the boat is sufficiently off-course that the two
+bearings are different.
+</a></p><pre><a name="gpapb">  $GPAPB,A,A,0.10,R,N,V,V,011,M,DEST,011,M,011,M*82 
+
+where:
+    APB     Autopilot format B
+    A       Loran-C blink/SNR warning, general warning 
+    A       Loran-C cycle warning 
+    0.10    cross-track error distance 
+    R       steer Right to correct (or L for Left) 
+    N       cross-track error units - nautical miles (K for kilometers) 
+    V       arrival alarm - circle 
+    V       arrival alarm - perpendicular 
+    011,M   magnetic bearing, origin to destination 
+    DEST    destination waypoint ID 
+    011,M   magnetic bearing, present position to destination 
+    011,M   magnetic heading to steer (bearings could True as 033,T) 
+</a></pre>
+
+<hr size="1"><a name="gpbod"></a><h2><a name="gpbod">$GPBOD</a></h2>
+<p><a name="gpbod">Bearing Origin to Destination
+</a></p><pre><a name="gpbod">eg.  BOD,045.,T,023.,M,DEST,START
+           045.,T       bearing 045 degrees True from "START" to "DEST"
+           023.,M       breaing 023 degrees Magnetic from "START" to "DEST"
+           DEST         destination waypoint ID
+           START        origin waypoint ID
+</a></pre>
+
+<p><a name="gpbod">Example 1: $GPBOD,099.3,T,105.6,M,POINTB,*01<br>
+Waypoint ID: "POINTB" Bearing 99.3 True, 105.6 Magnetic <br>
+This sentence is transmitted in the GOTO mode, without an active route on your GPS.
+WARNING: this is the bearing from the moment you press enter in the GOTO
+page to the destination waypoint and is NOT updated dynamically! 
+To update the information, (current bearing to waypoint), you will have to press enter in the GOTO page again.
+</a></p><p><a name="gpbod">Example 2: $GPBOD,097.0,T,103.2,M,POINTB,POINTA*52<br>
+This sentence is transmitted when a route is active. It contains the
+active leg information: origin waypoint "POINTA" and destination
+waypoint "POINTB", bearing between the two points 97.0 True, 103.2
+Magnetic. It does NOT display the bearing from current location to
+destination waypoint!
+WARNING Again this information does not change until you are on the
+next leg of the route. (The bearing from POINTA to POINTB does not
+change during the time you are on this leg.)
+</a></p><hr size="1"><a name="gpbwc"></a><h2><a name="gpbwc">$GPBWC</a></h2>
+<p><a name="gpbwc">Bearing and distance to waypoint, great circle
+</a></p><pre><a name="gpbwc">eg1. $GPBWC,081837,,,,,,T,,M,,N,*13
+
+        BWC,225444,4917.24,N,12309.57,W,051.9,T,031.6,M,001.3,N,004*29
+           225444       UTC time of fix 22:54:44
+           4917.24,N    Latitude of waypoint
+           12309.57,W   Longitude of waypoint
+           051.9,T      Bearing to waypoint, degrees true
+           031.6,M      Bearing to waypoint, degrees magnetic
+           001.3,N      Distance to waypoint, Nautical miles
+           004          Waypoint ID
+<br>
+eg2. $GPBWC,220516,5130.02,N,00046.34,W,213.8,T,218.0,M,0004.6,N,EGLM*11
+               1      2    3     4    5    6  7   8   9    10  11 12 13
+<br>
+      1    220516    timestamp
+      2    5130.02   Latitude of next waypoint
+      3    N         North/South
+      4    00046.34  Longitude of next waypoint
+      5    W         East/West
+      6    213.0     True track to waypoint
+      7    T         True Track
+      8    218.0     Magnetic track to waypoint
+      9    M         Magnetic
+      10   0004.6    range to waypoint
+      11   N         unit of range to waypoint, N = Nautical miles
+      12   EGLM      Waypoint name
+      13   *11       checksum
+</a></pre>
+
+<hr size="1"><a name="gpgga"></a><h2><a name="gpgga">$GPGGA</a></h2>
+<p><a name="gpgga">Global Positioning System Fix Data
+</a></p><p><a name="gpgga">eg1. $GPGGA,170834,4124.8963,N,08151.6838,W,1,05,1.5,280.2,M,-34.0,M,,,*75
+</a></p><p><table border="1">
+  <tbody><tr align="left">
+    <th>Name </th>
+    <th>Example Data </th>
+    <th>Description </th>
+  </tr>
+  <tr>
+    <td>Sentence Identifier</td>
+    <td>$GPGGA</td>
+    <td>Global Positioning System Fix Data</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>170834</td>
+    <td>17:08:34 UTC</td>
+  </tr>
+  <tr>
+    <td>Latitude</td>
+    <td>4124.8963, N</td>
+    <td>41d 24.8963' N or 41d 24' 54" N</td>
+  </tr>
+  <tr>
+    <td>Longitude</td>
+    <td>08151.6838, W</td>
+    <td>81d 51.6838' W or 81d 51' 41" W</td>
+  </tr>
+  <tr>
+    <td>Fix Quality:<br>
+    - 0 = Invalid<br>
+    - 1 = GPS fix<br>
+    - 2 = DGPS fix</td>
+    <td>1</td>
+    <td>Data is from a GPS fix</td>
+  </tr>
+  <tr>
+    <td>Number of Satellites</td>
+    <td>05</td>
+    <td>5 Satellites are in view</td>
+  </tr>
+  <tr>
+    <td>Horizontal Dilution of Precision (HDOP)</td>
+    <td>1.5</td>
+    <td>Relative accuracy of horizontal position</td>
+  </tr>
+  <tr>
+    <td>Altitude</td>
+    <td>280.2, M</td>
+    <td>280.2 meters above mean sea level</td>
+  </tr>
+  <tr>
+    <td>Height of geoid above WGS84 ellipsoid</td>
+    <td>-34.0, M</td>
+    <td>-34.0 meters</td>
+  </tr>
+  <tr>
+    <td>Time since last DGPS update</td>
+    <td>blank</td>
+    <td>No last update</td>
+  </tr>
+  <tr>
+    <td>DGPS reference station id</td>
+    <td>blank</td>
+    <td>No station id</td>
+  </tr>
+  <tr>
+    <td>Checksum</td>
+    <td>*75</td>
+    <td>Used by program to check for transmission errors</td>
+  </tr>
+</tbody></table>
+</p><p><a name="gpgga">Courtesy of Brian McClure, N8PQI.
+
+</a></p><p><a name="gpgga">Global Positioning System Fix Data.
+Time, position and fix related data for a GPS receiver. 
+</a></p><p><a name="gpgga">eg2. $GPGGA,hhmmss.ss,ddmm.mmm,a,dddmm.mmm,b,q,xx,p.p,a.b,M,c.d,M,x.x,nnnn
+</a></p><p><a name="gpgga">hhmmss.ss = UTC of position <br>
+ddmm.mmm = latitude of position<br>
+a = N or S, latitutde hemisphere<br>
+dddmm.mmm = longitude of position<br>
+b = E or W, longitude hemisphere <br>
+q = GPS Quality indicator (0=No fix, 1=Non-differential GPS fix, 2=Differential GPS fix, 6=Estimated fix) <br>
+xx = number of satellites in use <br>
+p.p = horizontal dilution of precision <br>
+a.b = Antenna altitude above mean-sea-level<br>
+M = units of antenna altitude, meters <br>
+c.d = Geoidal height<br>
+M = units of geoidal height, meters <br>
+x.x = Age of Differential GPS data (seconds since last valid RTCM transmission) <br>
+nnnn = Differential reference station ID, 0000 to 1023 <br>
+
+</a></p><hr size="1"><a name="gpgll"></a><h2><a name="gpgll">$GPGLL</a></h2>
+<p><a name="gpgll">Geographic Position, Latitude / Longitude and time.
+</a></p><pre><a name="gpgll">eg1. $GPGLL,3751.65,S,14507.36,E*77
+eg2. $GPGLL,4916.45,N,12311.12,W,225444,A
+<br>
+           4916.46,N    Latitude 49 deg. 16.45 min. North
+           12311.12,W   Longitude 123 deg. 11.12 min. West
+           225444       Fix taken at 22:54:44 UTC
+           A            Data valid
+<br>
+eg3. $GPGLL,5133.81,N,00042.25,W*75
+               1    2     3    4 5
+
+      1    5133.81   Current latitude
+      2    N         North/South
+      3    00042.25  Current longitude
+      4    W         East/West
+      5    *75       checksum
+</a></pre><a name="gpgll"> 
+
+</a><p><a name="gpgll">$--GLL,lll.ll,a,yyyyy.yy,a,hhmmss.ss,A  llll.ll = Latitude of position 
+</a></p><p><a name="gpgll">a = N or S <br>
+yyyyy.yy = Longitude of position <br>
+a = E or W <br>
+hhmmss.ss = UTC of position <br>
+A = status: A = valid data  <br>
+
+</a></p><hr size="1"><a name="gpgrs"></a><h2><a name="gpgrs">$GPGRS</a></h2>
+<p><a name="gpgrs">GPS Range Residuals
+</a></p><p><a name="gpgrs">Example: $GPGRS,024603.00,1,-1.8,-2.7,0.3,,,,,,,,,*6C
+</a></p><p><table border="1">
+<tbody><tr><th>Field</th><th>Example</th><th>Comments</th></tr>
+<tr><td>Sentence ID</td><td>$GPGRS</td><td>&nbsp;</td></tr>
+<tr><td>UTC Time</td><td>024603.00</td><td>UTC time of associated GGA fix</td></tr>
+<tr><td>Mode</td><td>1</td><td>0 = Residuals used in GGA, 1 = residuals calculated after GGA</td></tr>
+<tr><td>Sat 1 residual</td><td>-1.8</td><td>Residual (meters) of satellite 1 in solution</td></tr>
+<tr><td>Sat 2 residual</td><td>-2.7</td><td>The order matches the PRN numbers in the GSA sentence</td></tr>
+<tr><td>Sat 3 residual</td><td>0.3</td><td>&nbsp;</td></tr>
+<tr><td>Sat 4 residual</td><td>&nbsp;</td><td>Unused entries are blank</td></tr>
+<tr><td>Sat 5 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 6 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 7 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 8 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 9 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 10 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 11 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Sat 12 residual</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Checksum</td><td>*6C</td><td>&nbsp;</td></tr>
+</tbody></table></p><p><a name="gpgrs">&nbsp;
+
+</a></p><hr size="1"><a name="gpgsa"></a><h2><a name="gpgsa">$GPGSA</a></h2>
+<p><a name="gpgsa">GPS DOP and active satellites 
+</a></p><pre><a name="gpgsa">eg1. $GPGSA,A,3,,,,,,16,18,,22,24,,,3.6,2.1,2.2*3C
+eg2. $GPGSA,A,3,19,28,14,18,27,22,31,39,,,,,1.7,1.0,1.3*34
+<br>
+1    = Mode:
+       M=Manual, forced to operate in 2D or 3D
+       A=Automatic, 3D/2D
+2    = Mode:
+       1=Fix not available
+       2=2D
+       3=3D
+3-14 = PRN's of Satellite Vechicles (SV's) used in position fix (null for unused fields)
+15   = Position Dilution of Precision (PDOP)
+16   = Horizontal Dilution of Precision (HDOP)
+17   = Vertical Dilution of Precision (VDOP)
+</a></pre>
+
+<hr size="1"><a name="gpgst"></a><h2><a name="gpgst">$GPGST</a></h2>
+<p><a name="gpgst">GPS Pseudorange Noise Statistics
+</a></p><p><a name="gpgst">Example: $GPGST,024603.00,3.2,6.6,4.7,47.3,5.8,5.6,22.0*58
+</a></p><p><table border="1">
+<tbody><tr><th>Field</th><th>Example</th><th>Comments</th></tr>
+<tr><td>Sentence ID</td><td>$GPGST</td><td>&nbsp;</td></tr>
+<tr><td>UTC Time</td><td>024603.00</td><td>UTC time of associated GGA fix</td></tr>
+<tr><td>RMS deviation</td><td>3.2</td><td>Total RMS standard deviation of ranges inputs to the navigation solution</td></tr>
+<tr><td>Semi-major deviation</td><td>6.6</td><td>Standard deviation (meters) of semi-major axis of error ellipse</td></tr>
+<tr><td>Semi-minor deviation</td><td>4.7</td><td>Standard deviation (meters) of semi-minor axis of error ellipse</td></tr>
+<tr><td>Semi-major orientation</td><td>47.3</td><td>Orientation of semi-major axis of error ellipse (true north degrees)</td></tr>
+<tr><td>Latitude error deviation</td><td>5.8</td><td>Standard deviation (meters) of latitude error</td></tr>
+<tr><td>Longitude error deviation</td><td>5.6</td><td>Standard deviation (meters) of longitude error</td></tr>
+<tr><td>Altitude error deviation</td><td>22.0</td><td>Standard deviation (meters) of latitude error</td></tr>
+<tr><td>Checksum</td><td>*58</td><td>&nbsp;</td></tr>
+</tbody></table></p><p><a name="gpgst">&nbsp;
+
+</a></p><hr size="1"><a name="gpgsv"></a><h2><a name="gpgsv">$GPGSV</a></h2>
+<p><a name="gpgsv">GPS Satellites in view
+</a></p><pre><a name="gpgsv">eg. $GPGSV,3,1,11,03,03,111,00,04,15,270,00,06,01,010,00,13,06,292,00*74
+    $GPGSV,3,2,11,14,25,170,00,16,57,208,39,18,67,296,40,19,40,246,00*74
+    $GPGSV,3,3,11,22,42,067,42,24,14,311,43,27,05,244,00,,,,*4D
+<br>
+    $GPGSV,1,1,13,02,02,213,,03,-3,000,,11,00,121,,14,13,172,05*62
+<br>
+1    = Total number of messages of this type in this cycle
+2    = Message number
+3    = Total number of SVs in view
+4    = SV PRN number
+5    = Elevation in degrees, 90 maximum
+6    = Azimuth, degrees from true north, 000 to 359
+7    = SNR, 00-99 dB (null when not tracking)
+8-11 = Information about second SV, same as field 4-7
+12-15= Information about third SV, same as field 4-7
+16-19= Information about fourth SV, same as field 4-7
+</a></pre>
+
+<hr size="1"><a name="gphdt"></a><h2><a name="gphdt">$GPHDT</a></h2>
+<p><a name="gphdt">Heading, True.
+</a></p><p><a name="gphdt">Actual vessel heading in degrees Ture produced by any device or system producing true heading. 
+</a></p><p><a name="gphdt">$--HDT,x.x,T<br>
+ x.x = Heading, degrees True
+
+</a></p><hr size="1"><a name="gpmsk"></a><h2><a name="gpmsk">$GPMSK</a></h2>
+<p><a name="gpmsk">Control for a Beacon Receiver
+</a></p><pre><a name="gpmsk">  $GPMSK,318.0,A,100,M,2*45
+
+where:
+       318.0      Frequency to use
+       A          Frequency mode, A=auto, M=manual
+       100        Beacon bit rate
+       M          Bitrate, A=auto, M=manual
+       2          frequency for MSS message status (null for no status)
+       *45        checksum
+</a></pre>
+
+<hr size="1"><a name="gpmss"></a><h2><a name="gpmss">$GPMSS</a></h2>
+<p><a name="gpmss">Beacon Receiver Status
+</a></p><p><a name="gpmss">Example 1: $GPMSS,55,27,318.0,100,*66
+</a></p><pre><a name="gpmss">where:
+       55         signal strength in dB
+       27         signal to noise ratio in dB
+       318.0      Beacon Frequency in KHz
+       100        Beacon bitrate in bps
+       *66        checksum
+</a></pre>
+<p><a name="gpmss">Example 2: $GPMSS,0.0,0.0,0.0,25,2*6D
+</a></p><p><table border="1">
+<tbody><tr><th>Field</th><th>Example</th><th>Comments</th></tr>
+<tr><td>Sentence ID</td><td>$GPMSS</td><td>&nbsp;</td></tr>
+<tr><td>Signal strength</td><td>0.0</td><td>Signal strength (dB 1uV)</td></tr>
+<tr><td>SNR</td><td>0.0</td><td>Signal to noise ratio (dB)</td></tr>
+<tr><td>Frequency</td><td>0.0</td><td>Beacon frequency (kHz)</td></tr>
+<tr><td>Data rate</td><td>25</td><td>Beacon data rate (BPS)</td></tr>
+<tr><td>Unknown field</td><td>2</td><td>Unknown field sent by GPS receiver used for test</td></tr>
+<tr><td>Checksum</td><td>*6D</td><td>&nbsp;</td></tr>
+</tbody></table></p><p><a name="gpmss">&nbsp;
+
+</a></p><hr size="1"><a name="gpr00"></a><h2><a name="gpr00">$GPR00</a></h2>
+<p><a name="gpr00">List of waypoint IDs in currently active route
+</a></p><pre><a name="gpr00">eg1. $GPR00,EGLL,EGLM,EGTB,EGUB,EGTK,MBOT,EGTB,,,,,,,*58
+eg2. $GPR00,MINST,CHATN,CHAT1,CHATW,CHATM,CHATE,003,004,005,006,007,,,*05
+<br>
+List of waypoints. This alternates with $GPWPL cycle
+which itself cycles waypoints.
+</a></pre>
+
+<hr size="1"><a name="gprma"></a><h2><a name="gprma">$GPRMA</a></h2>
+<p><a name="gprma">Recommended minimum specific Loran-C data
+</a></p><pre><a name="gprma">eg. $GPRMA,A,lll,N,lll,W,x,y,ss.s,ccc,vv.v,W*hh
+A    = Data status 
+lll  = Latitude
+N    = N/S
+lll  = longitude
+S    = W/E
+x    = not used
+y    = not used
+ss.s = Speed over ground in knots
+ccc  = Course over ground
+vv.v = Variation
+W    = Direction of variation E/W
+hh   = Checksum 
+</a></pre>
+
+<hr size="1"><a name="gprmb"></a><h2><a name="gprmb">$GPRMB</a></h2>
+<p><a name="gprmb">Recommended minimum navigation information (sent by nav.
+receiver when a destination waypoint is active)
+</a></p><pre><a name="gprmb">eg1. $GPRMB,A,0.66,L,003,004,4917.24,N,12309.57,W,001.3,052.5,000.5,V*0B
+<br>
+           A            Data status A = OK, V = warning
+           0.66,L       Cross-track error (nautical miles, 9.9 max.),
+                                steer Left to correct (or R = right)
+           003          Origin waypoint ID
+           004          Destination waypoint ID
+           4917.24,N    Destination waypoint latitude 49 deg. 17.24 min. N
+           12309.57,W   Destination waypoint longitude 123 deg. 09.57 min. W
+           001.3        Range to destination, nautical miles
+           052.5        True bearing to destination
+           000.5        Velocity towards destination, knots
+           V            Arrival alarm  A = arrived, V = not arrived
+           *0B          mandatory checksum
+<br>
+eg2. $GPRMB,A,4.08,L,EGLL,EGLM,5130.02,N,00046.34,W,004.6,213.9,122.9,A*3D
+            1   2  3   4    5    6     7   8      9   10    11    12   13
+<br>  
+      1    A         validity
+      2    4.08      off track
+      3    L         Steer Left (L/R)
+      4    EGLL      last waypoint
+      5    EGLM      next waypoint
+      6    5130.02   Latitude of Next waypoint
+      7    N         North/South
+      8    00046.34  Longitude of next waypoint
+      9    W         East/West
+      10   004.6     Range
+      11   213.9     bearing to waypt.
+      12   122.9     closing velocity
+      13   A         validity
+      14   *3D       checksum
+<br>
+eg3. $GPRMB,A,x.x,a,c--c,d--d,llll.ll,e,yyyyy.yy,f,g.g,h.h,i.i,j*kk
+1    = Data Status (V=navigation receiver warning)
+2    = Crosstrack error in nautical miles
+3    = Direction to steer (L or R) to correct error
+4    = Origin waypoint ID#
+5    = Destination waypoint ID#
+6    = Destination waypoint latitude
+7    = N or S
+8    = Destination waypoint longitude
+9    = E or W
+10   = Range to destination in nautical miles
+11   = Bearing to destination, degrees True
+12   = Destination closing velocity in knots
+13   = Arrival status; (A=entered or perpendicular passed)
+14   = Checksum
+</a></pre>
+
+<hr size="1"><a name="gprmc"></a><h2><a name="gprmc">$GPRMC</a></h2>
+<p><a name="gprmc">Recommended minimum specific GPS/TRANSIT data
+</a></p><pre><a name="gprmc">eg1. $GPRMC,081836,A,3751.65,S,14507.36,E,000.0,360.0,130998,011.3,E*62
+eg2. $GPRMC,225446,A,4916.45,N,12311.12,W,000.5,054.7,191194,020.3,E*68
+<br>
+           225446       Time of fix 22:54:46 UTC
+           A            Navigation receiver warning A = Valid position, V = Warning
+           4916.45,N    Latitude 49 deg. 16.45 min. North
+           12311.12,W   Longitude 123 deg. 11.12 min. West
+           000.5        Speed over ground, Knots
+           054.7        Course Made Good, degrees true
+           191194       UTC Date of fix, 19 November 1994
+           020.3,E      Magnetic variation, 20.3 deg. East
+           *68          mandatory checksum
+<br>
+eg3. $GPRMC,220516,A,5133.82,N,00042.24,W,173.8,231.8,130694,004.2,W*70
+              1    2    3    4    5     6    7    8      9     10  11 12
+<br>
+      1   220516     Time Stamp
+      2   A          validity - A-ok, V-invalid
+      3   5133.82    current Latitude
+      4   N          North/South
+      5   00042.24   current Longitude
+      6   W          East/West
+      7   173.8      Speed in knots
+      8   231.8      True course
+      9   130694     Date Stamp
+      10  004.2      Variation
+      11  W          East/West
+      12  *70        checksum
+<br>
+eg4. for NMEA 0183 version 3.00 active the Mode indicator field is added
+     $GPRMC,hhmmss.ss,A,llll.ll,a,yyyyy.yy,a,x.x,x.x,ddmmyy,x.x,a,m*hh
+Field #
+1    = UTC time of fix
+2    = Data status (A=Valid position, V=navigation receiver warning)
+3    = Latitude of fix
+4    = N or S of longitude
+5    = Longitude of fix
+6    = E or W of longitude
+7    = Speed over ground in knots
+8    = Track made good in degrees True
+9    = UTC date of fix
+10   = Magnetic variation degrees (Easterly var. subtracts from true course)
+11   = E or W of magnetic variation
+12   = Mode indicator, (A=Autonomous, D=Differential, E=Estimated, N=Data not valid)
+13   = Checksum
+</a></pre>
+
+<hr size="1"><a name="gprte"></a><h2><a name="gprte">$GPRTE</a></h2>
+<p><a name="gprte">Routes
+</a></p><pre><a name="gprte">eg. $GPRTE,2,1,c,0,PBRCPK,PBRTO,PTELGR,PPLAND,PYAMBU,PPFAIR,PWARRN,PMORTL,PLISMR*73
+    $GPRTE,2,2,c,0,PCRESY,GRYRIE,GCORIO,GWERR,GWESTG,7FED*34
+           1 2 3 4 5 ..
+</a></pre>
+<ol>
+<li><a name="gprte">Number of sentences in sequence
+</a></li><li><a name="gprte">Sentence number
+</a></li><li><a name="gprte">'c' = Current active route, 'w' = waypoint list starts with destination waypoint
+</a></li><li><a name="gprte">Name or number of the active route
+</a></li><li><a name="gprte">onwards, Names of waypoints in Route
+</a></li></ol>
+<hr size="1"><a name="gptrf"></a><h2><a name="gptrf">$GPTRF</a></h2>
+<p><a name="gptrf">TRANSIT Fix Data
+</a></p><p><a name="gptrf">Time, date, position, and information related to a TRANSIT Fix.
+The $GPTRF and $GPGXA sentences became obsolete when the TRANSIT satellite navigation system was replaced with GPS
+in 1996, refer to </a><a href="http://en.wikipedia.org/wiki/Transit_%28satellite%29">Wikipedia</a> for further details.
+</p><p>$--TRF,hhmmss.ss,xxxxxx,llll.ll,a,yyyyy.yy,a,x.x,x.x,x.x,x.x,xxx<br>
+hhmmss.ss = UTC of position fix <br>
+xxxxxx = Date: dd/mm/yy <br>
+llll.ll,a = Latitude of position fix, N/S <br>
+yyyyy.yy,a = Longitude of position fix, E/W <br>
+x.x = Elevation angle <br>
+x.x = Number of iterations<br> 
+x.x = Number of Doppler intervals <br>
+x.x = Update distance, nautical miles <br>
+x.x = Satellite ID
+
+</p><hr size="1"><a name="gpstn"></a><h2><a name="gpstn">$GPSTN</a></h2>
+<p><a name="gpstn">Multiple Data ID.
+</a></p><p><a name="gpstn">This sentence is transmitted before each individual sentence where there is a need for
+the Listener to determine the exact source of data in the system. Examples might
+include dual-frequency depthsounding equipment or equipment that integrates data
+from a number of sources and produces a single output. 
+</a></p><p><a name="gpstn">$--STN,xx<br>
+xx = Talker ID number, 00 to 99  
+
+</a></p><hr size="1"><a name="gpvbw"></a><h2><a name="gpvbw">$GPVBW</a></h2>
+<p><a name="gpvbw">Dual Ground / Water Speed
+</a></p><p><a name="gpvbw">Water referenced and ground referenced speed data. 
+</a></p><p><a name="gpvbw">$--VBW,x.x,x.x,A,x.x,x.x,A<br>
+x.x = Longitudinal water speed, knots <br>
+x.x = Transverse water speed, knots <br>
+A = Status: Water speed, A = Data valid <br>
+x.x = Longitudinal ground speed, knots <br>
+x.x = Transverse ground speed, knots <br>
+A = Status: Ground speed, A = Data valid
+
+</a></p><hr size="1"><a name="gpvtg"></a><h2><a name="gpvtg">$GPVTG</a></h2>
+<p><a name="gpvtg">Track Made Good and Ground Speed.
+</a></p><pre><a name="gpvtg">eg1. $GPVTG,360.0,T,348.7,M,000.0,N,000.0,K*43
+eg2. $GPVTG,054.7,T,034.4,M,005.5,N,010.2,K*41
+<br>
+           054.7,T      True course made good over ground, degrees
+           034.4,M      Magnetic course made good over ground, degrees
+           005.5,N      Ground speed, N=Knots
+           010.2,K      Ground speed, K=Kilometers per hour
+<br>
+eg3. for NMEA 0183 version 3.00 active the Mode indicator field
+     is added at the end
+     $GPVTG,054.7,T,034.4,M,005.5,N,010.2,K,A*53
+           A            Mode indicator (A=Autonomous, D=Differential,
+                        E=Estimated, N=Data not valid)
+</a></pre>
+<hr size="1"><a name="gpwpl"></a><h2><a name="gpwpl">$GPWPL</a></h2>
+<p><a name="gpwpl">Waypoint location
+</a></p><pre><a name="gpwpl">eg1. $GPWPL,4917.16,N,12310.64,W,003*65
+<br>
+           4917.16,N    Latitude of waypoint
+           12310.64,W   Longitude of waypoint
+           003          Waypoint ID
+<br>
+             When a route is active, this sentence is sent once for each
+             waypoint in the route, in sequence. When all waypoints have
+             been reported, GPR00 is sent in the next data set. In any
+             group of sentences, only one WPL sentence, or an R00
+             sentence, will be sent.
+<br>
+eg2.  $GPWPL,5128.62,N,00027.58,W,EGLL*59
+         1     2     3    4  5   6
+<br>
+      1    5128.62   Latitude of nth waypoint on list
+      2    N         North/South
+      3    00027.58  Longitude of nth waypoint
+      4    W         East/West
+      5    EGLL      Ident of nth waypoint
+      6    *59       checksum
+</a></pre>
+
+<hr size="1"><a name="gpxte"></a><h2><a name="gpxte">$GPXTE</a></h2>
+<p><a name="gpxte">Cross Track Error, Measured
+</a></p><pre><a name="gpxte">eg1. $GPXTE,A,A,0.67,L,N
+<br>
+           A            General warning flag V = warning
+                                (Loran-C Blink or SNR warning)
+           A            Not used for GPS (Loran-C cycle lock flag)
+           0.67         cross track error distance
+           L            Steer left to correct error (or R for right)
+           N            Distance units - Nautical miles
+<br>
+eg2. $GPXTE,A,A,4.07,L,N*6D
+            1 2  3   4 5 6
+<br>
+      1    A         validity
+      2    A         cycle lock
+      3    4.07      distance off track
+      4    L         steer left (L/R)
+      5    N         distance units
+      6    *6D       checksum
+</a></pre>
+
+<hr size="1"><a name="gpzda"></a><h2><a name="gpzda">$GPZDA</a></h2>
+<p><a name="gpzda">UTC Date / Time and Local Time Zone Offset
+</a></p><p><a name="gpzda">Example 1: $GPZDA,hhmmss.ss,xx,xx,xxxx,xx,xx
+</a></p><pre><a name="gpzda">hhmmss.ss = UTC
+xx = Day, 01 to 31
+xx = Month, 01 to 12
+xxxx = Year
+xx = Local zone description, 00 to +/- 13 hours
+xx = Local zone minutes description (same sign as hours)
+</a></pre>
+<p><a name="gpzda">Example 2: $GPZDA,024611.08,25,03,2002,00,00*6A
+</a></p><p><table border="1">
+<tbody><tr><th>Field</th><th>Example</th><th>Comments</th></tr>
+<tr><td>Sentence ID</td><td>$GPZDA</td><td>&nbsp;</td></tr>
+<tr><td>UTC Time</td><td>024611.08</td><td>UTC time</td></tr>
+<tr><td>UTC Day</td><td>25</td><td>UTC day (01 to 31)</td></tr>
+<tr><td>UTC Month</td><td>03</td><td>UTC month (01 to 12)</td></tr>
+<tr><td>UTC Year</td><td>2002</td><td>UTC year (4 digit format)</td></tr>
+<tr><td>Local zone hours</td><td>00</td><td>Offset to local time zone in hours (+/- 00 to +/- 59)</td></tr>
+<tr><td>Local zone minutes</td><td>00</td><td>Offset to local time zone in minutes (00 to 59)</td></tr>
+<tr><td>Checksum</td><td>*6A</td><td>&nbsp;</td></tr>
+</tbody></table>
+
+<a name="garmin"></a></p><p><a name="garmin">[ </a><a href="#top">Top</a> ]
+</p><hr size="3"><h2>12 interpreted Garmin proprietary sentences transmitted by GPS unit</h2>
+<pre>   <a href="#hchdg">$HCHDG</a>  - Compass Heading
+   <a href="#pgrmb">$PGRMB</a>  - DGPS Beacon Information
+   <a href="#pgrmc">$PGRMC</a>  - Sensor Configuration Information
+   <a href="#pgrmc1">$PGRMC1</a> - Additional Sensor Configuration Information
+   <a href="#pgrme">$PGRME</a>  - Estimated Position Error
+   <a href="#pgrmf">$PGRMF</a>  - GPS Position Fix Data
+   <a href="#pgrmi">$PGRMI</a>  - Sensor Initialization Information
+   <a href="#pgrmm">$PGRMM</a>  - Map Datum
+   <a href="#pgrmt">$PGRMT</a>  - Sensor Status Information
+   <a href="#pgrmv">$PGRMV</a>  - 3D Velocity Information
+   <a href="#pgrmz">$PGRMZ</a>  - Altitude Information
+   <a href="#pslib">$PSLIB</a>  - Tune DPGS Beacon Receiver
+</pre>
+
+<p>[<a href="#top">Top</a>]
+
+</p><hr size="1"><a name="hchdg"></a><h2><a name="hchdg">$HCHDG</a></h2>
+<p><a name="hchdg">Compass Heading
+</a></p><p><a name="hchdg">This sentence is used on Garmin eTrex summit, Vista and GPS76S receivers
+to output the value of the internal flux-gate compass.  Only the magnetic heading and magnetic
+variation is shown in the message.
+
+</a></p><pre><a name="hchdg">  $HCHDG,101.1,,,7.1,W*3C
+
+where:
+     HCHDG    Magnetic heading, deviation, variation
+     101.1    heading
+     ,,       deviation (no data)
+     7.1,W    variation
+</a></pre>
+
+<hr size="1"><a name="pgrmb"></a><h2><a name="pgrmb">$PGRMB</a></h2>
+<p><a name="pgrmb">DGPS Beacon Information
+</a></p><p><a name="pgrmb">$PGRMB,1,2,3,4,5,6,7,8,9*HH<br>
+1 = Tune frequency, Kilohertz (283.5 - 325.0 in 0.5 steps)<br>
+2 = Bit rate, Bits / second (0, 25, 50, 100, 200)<br>
+3 = SNR (Signal to Noise Ratio), 0 - 31<br>
+4 = Data Quality, 0 - 100<br>
+5 = Distance to beacon reference station<br>
+6 = Distance unit (K=Kilometres)<br>
+7 = Receiver communication status (0=Check wiring, 1=No signal, 2=Tuning, 3=Receiving, 4=Scanning)<br>
+8 = Fix source (R=RTCM, W=WAAS, N=Non-DPGS fix)<br>
+9 = DGPS Mode (A=Automatic, W=WAAS only, R=RTCM Only, N=None; DGPS disabled)<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrme"></a><h2><a name="pgrme">$PGRME</a></h2>
+<p><a name="pgrme">Estimated Position Error
+</a></p><pre><a name="pgrme">eg. $PGRME,15.0,M,45.0,M,25.0,M*22
+<br>
+     15.0,M       Estimated horizontal position error (HPE), M=metres
+     45.0,M       Estimated vertical position error (VPE), M=metres
+     25.0,M       Overall spherical equivalent position error, M=metres
+</a></pre>
+
+<hr size="1"><a name="pgrmf"></a><h2><a name="pgrmf">$PGRMF</a></h2>
+<p><a name="pgrmf">GPS Position Fix Data
+</a></p><p><a name="pgrmf">$PGRMF,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15*HH<br>
+1 = GPS week number<br>
+2 = GPS seconds in current week<br>
+3 = UTC date, ddmmyy format<br>
+4 = UTC time, hhmmss format<br>
+5 = GPS leap second count<br>
+6 = Latitude, dddmm.mmmm format<br>
+7 = Latitude hemisphere, N or S<br>
+8 = Longitude, dddmm.mmmm format<br>
+9 = Longitude hemisphere, E or W<br>
+10 = Mode (M=Manual, A=Automatic)<br>
+11 = Fix type (0=No fix, 1=2D fix, 2=3D fix)<br>
+12 = Speed over ground, kilometres / hour<br>
+13 = Course over ground, degrees true<br>
+14 = PDOP (Position dilution of precision), rounded to nearest integer<br>
+15 = TDOP (Time dilution of precision), rounded to nearest integer<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmm"></a><h2><a name="pgrmm">$PGRMM</a></h2>
+<p><a name="pgrmm">Map datum
+</a></p><p><a name="pgrmm">Example 1: $PGRMM,Astrln Geod '66*51
+</a></p><p><a name="pgrmm">'Astrln Geod 66' = Name of currently active datum
+</a></p><p><a name="pgrmm">Example 2: $PGRMM,NAD27 Canada*2F
+</a></p><p><a name="pgrmm">'NAD27 Canada' = Name of currently active datum
+
+
+</a></p><hr size="1"><a name="pgrmt"></a><h2><a name="pgrmt">$PGRMT</a></h2>
+<p><a name="pgrmt">Sensor Status Information
+</a></p><p><a name="pgrmt">$PGRMT,1,2,3,4,5,6,7,8,9*HH<br>
+1 = Garmin product model and software version (eg. GPS 16 VER 2.10)<br>
+2 = ROM checksum test (P=Pass, F=Fail)<br>
+3 = Receiver failure discrete (P=Pass, F=Fail)<br>
+4 = Stored data lost (R=Retained, L=Lost)<br>
+5 = Real time clock lost (R=Retained, L=Lost)<br>
+6 = Oscillator drift discrete (P=Pass, F=Excessive drift detected)<br>
+7 = Data collection discrtete (C=Collecting, Null=Not Collecting)<br>
+8 = GPS sensor temperature (Degrees C)<br>
+9 = GPS sensor configuration data (R=Retained, L=Lost)<br>
+HH = Checksum
+</a></p><p>
+
+</p><hr size="1"><a name="pgrmv"></a><h2><a name="pgrmv">$PGRMV</a></h2>
+<p><a name="pgrmv">3D Velocity Information
+</a></p><p><a name="pgrmv">$PGRMV,1,2,3*HH<br>
+1 = True east velocity, metres / sec<br>
+2 = True north velocity, metres / sec<br>
+3 = Upward velocity, metres / sec<br>
+HH = Checksum
+</a></p><p>
+
+</p><hr size="1"><a name="pgrmz"></a><h2><a name="pgrmz">$PGRMZ</a></h2>
+<p><a name="pgrmz">Altitude Information
+</a></p><pre><a name="pgrmz">eg1. $PGRMZ,246,f,3*1B
+eg2. $PGRMZ,93,f,3*21
+<br>     
+      93,f         Altitude in feet
+       3            Position fix dimensions 2 = user altitude
+                                            3 = GPS altitude
+  This sentence shows in feet, regardless of units shown on the display.
+<br>
+eg3.  $PGRMZ,201,f,3*18
+              1  2 3
+<br>
+      1  201   Altitude
+      2  F     Units - f-Feet
+      3  checksum
+</a></pre>
+
+<hr size="1"><a name="pslib"></a><h2><a name="pslib">$PSLIB</a></h2>
+<p><a name="pslib">Tune DPGS Beacon Receiver
+</a></p><p><a name="pslib">Proprietary Differential Control sentences to control a Starlink differential beacon
+receiver, assuming Garmin's DBR is made by Starlink.
+</a></p><pre><a name="pslib">eg1.    $PSLIB,290.5,100,J*22
+eg2.    $PSLIB,300.0,200,K*23
+</a></pre>
+<p><a name="pslib">These two sentences are normally sent together in each group
+of sentences from the GPS.
+</a></p><p><a name="pslib">The three fields are: Frequency, bit Rate, Request Type.
+The value in the third field may be:
+J = status request,
+K = configuration request,
+blank = tuning message.
+</a></p><p><a name="pslib">When the GPS receiver is set to change the DBR frequency or
+baud rate, the "J" sentence is replaced (just once) by (for
+example): $PSLIB,320.0,200*59 to set the DBR to 320 KHz, 200
+baud.
+</a></p><p><a name="pslib">To tune a Garmin GBR 21, GBR 23 or equivalent beacon receiver.
+</a></p><p><a name="pslib">$PSLIB,1,2*HH<br>
+1 = Beacon tune frequency, Kilohertz (283.5 - 325.0 in 0.5 steps)<br>
+2 = Beacon bit rate, Bits / second (0, 25, 50, 100, 200<br>
+HH = Checksum
+
+</a><a name="garminreceived"></a></p><p><a name="garminreceived">[ </a><a href="#top">Top</a> ]
+</p><hr size="3"><h2>8 interpreted Garmin proprietary sentences received by GPS unit</h2>
+<pre>   <a href="#pgrmc">$PGRMC</a>   - Sensor Configuration Information
+   <a href="#pgrmce">$PGRMCE</a>  - Sensor Configuration Information Enquiry
+   <a href="#pgrmc1">$PGRMC1</a>  - Additional Sensor Configuration Information
+   <a href="#pgrmc1e">$PGRMC1E</a> - Additional Sensor Configuration Information Enquiry
+   <a href="#pgrmi">$PGRMI</a>   - Sensor Initialization Information
+   <a href="#pgrmie">$PGRMIE</a>  - Sensor Initialization Information Enquiry
+   <a href="#pgrmo">$PGRMO</a>   - Output Sentence Enable / Disable
+   <a href="#pslib">$PSLIB</a>   - Tune DPGS Beacon Receiver
+</pre>
+<p>A few Garmin GPS receiver units are known to receive these sentences, including
+the GPS 16 and GPS 17 modules.
+</p><p>[<a href="#top">Top</a>]
+
+</p><hr size="1"><a name="pgrmc"></a><h2><a name="pgrmc">$PGRMC</a></h2>
+<p><a name="pgrmc">Sensor Configuration Information
+</a></p><p><a name="pgrmc">Used to configure the GPS sensor's operation. The GPS will also transmit
+this sentence upon receiving this same sentence or the $PGRMCE sentence.
+</a></p><p><a name="pgrmc">$PGRMC,1,2,3,4,5,6,7,8,9,10,11,12,13,14*HH<br>
+1 = Fix mode (A=Automatic, 2=2D exclusively; host system must supply altitude, 3=3D exclusively)<br>
+2 = Altitude above/below mean sea level, metres<br>3
+= Earth datum index. If the user datum index is specified (96), fields
+4 to 8 must contain valid values, otherwise they must be blank.<br>
+4 = Semi-major axis, metres, 0.001 metre resolution<br>
+5 = Inverse flattening factor, 285 to 310, 10e-9 resolution<br>
+6 = Delta X earth centred coordinate, metres, -5000 to 5000, 1 metre resolution<br>
+7 = Delta Y earth centred coordinate, metres, -5000 to 5000, 1 metre resolution<br>
+8 = Delta Z earth centred coordinate, metres, -5000 to 5000, 1 metre resolution<br>
+9 = Differential mode (A=Automatic; output DGPS fixes when available otherwise non-DGPS, D=Only output differential fixes)<br>
+10 = NMEA 0183 baud rate (1=1200, 2=2400, 3=4800, 4=9600, 5=19200, 6=300, 7=600)<br>
+11 = Velocity filter (0=None, 1=Automatic, 2-255=Filter time constant; seconds)<br>
+12 = PPS mode (1=None, 2=1 Hertz)<br>
+13 = PPS pulse length, N = 0 to 48. Length (milliseconds) = (N+1)*20<br>
+14 = Dead reckoning valid time, 1 to 30, seconds<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmce"></a><h2><a name="pgrmce">$PGRMCE</a></h2>
+<p><a name="pgrmce">Sensor Configuration Information Enquiry
+</a></p><p><a name="pgrmce">The unit will respond by transmitting a $PGRMC sentence containing the current default values.
+</a></p><p><a name="pgrmce">$PGRMCE*HH<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmc1"></a><h2><a name="pgrmc1">$PGRMC1</a></h2>
+<p><a name="pgrmc1">Additional Sensor Configuration Information
+</a></p><p><a name="pgrmc1">Used to configure additional aspects of the GPS sensor's operation. The GPS will also transmit
+this sentence upon receiving this same sentence or the $PGRMC1E sentence.
+</a></p><p><a name="pgrmc1">$PGRMC1,1,2,3,4,5,6,7,8,9*HH<br>
+1 = NMEA 0183 output time, 1-900, seconds (Not applicable to GPS16A)<br>
+2 = Binary phase output data (1=Off, 2=On)<br>
+3 = Position pinning (1=Off, 2=On)<br>
+4 = DGPS beacon frequency, Kilohertz, 283.5 to 325.0 in 0.5 steps<br>
+5 = DGPS beacon bit rate (0, 25, 50, 100, 200)<br>
+6 = DGPS beacon scanning (1=Off, 2=On)<br>
+7 = NMEA 0183 version 3.00 mode indicator (1=Off, 2=On)<br>
+8 = DGPS mode (A=Automatic, W=WAAS only, R=RTCM only, N=None; DGPS disabled)<br>
+9 = Power save mode (P=Activated, N=Normal)<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmc1e"></a><h2><a name="pgrmc1e">$PGRMC1E</a></h2>
+<p><a name="pgrmc1e">Additional Sensor Configuration Information Enquiry
+</a></p><p><a name="pgrmc1e">The unit will respond by transmitting a $PGRMC1 sentence containing the current default values.
+</a></p><p><a name="pgrmc1e">$PGRMC1E*HH<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmi"></a><h2><a name="pgrmi">$PGRMI</a></h2>
+<p><a name="pgrmi">Sensor Initialization Information
+</a></p><p><a name="pgrmi">Used to set the GPS sensor's set time and position and then commences satellite acquisition.
+The GPS will also transmit this sentence upon receiving this same sentence or the $PGRMIE sentence.
+</a></p><p><a name="pgrmi">$PGRMI,1,2,3,4,5,6,7*HH<br>
+1 = Latitude, dddmm.mmm format<br>
+2 = Latitude hemisphere, N or S<br>
+3 = Longitude, dddmm.mmm format<br>
+4 = Longitude hemisphere, N or S<br>
+5 = Current UTC date, ddmmyy format<br>
+6 = Current UTC time, hhmmss format<br>
+7 = Receiver command (A=Auto locate, R=Unit reset)<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmie"></a><h2><a name="pgrmie">$PGRMIE</a></h2>
+<p><a name="pgrmie">Sensor Initialization Information Enquiry
+</a></p><p><a name="pgrmie">The unit will respond by transmitting a $PGRMI sentence containing the current default values.
+</a></p><p><a name="pgrmie">$PGRMIE*HH<br>
+HH = Checksum
+
+</a></p><hr size="1"><a name="pgrmo"></a><h2><a name="pgrmo">$PGRMO</a></h2>
+<p><a name="pgrmo">Output Sentence Enable / Disable
+</a></p><p><a name="pgrmo">$PGRMO,xxxxx,n*HH<br>
+xxxxx = Target sentence name (eg. GPGGA, GPGSA)<br>
+n = Target mode (0=Disable specified sentence, 1=Enable specified
+sentence, 2=Disable all output sentences except PSLIB, 3=Enable all
+output sentences except GPALM, 4=Restore factory defaults)<br>
+HH = Checksum
+
+</a><a name="latlong"></a></p><p><a name="latlong">[ </a><a href="#top">Top</a> ]
+</p><hr size="3"><h2>Format of latitudes and longitudes</h2>
+<p>Where a numeric latitude or longitude is given, the two digits immediately to the left
+of the decimal point are whole minutes, to the right are decimals of minutes, and the remaining
+digits to the left of the whole minutes are whole degrees.
+</p><p>eg. 4533.35 is 45 degrees and 33.35 minutes.  ".35" of a minute is exactly 21 seconds.
+</p><p>eg. 16708.033 is 167 degrees and 8.033 minutes.  ".033" of a minute is about 2 seconds.
+
+<a name="refs"></a></p><p><a name="refs">[ </a><a href="#top">Top</a> ]
+</p><hr size="3"><h2>References</h2>
+<p>This information on <a href="http://www.nmea.org/">NMEA</a> sentences
+has been sourced from all over the 'net and I make
+no apologies for any inaccuracies or errors.  Still, it's useful stuff.
+I wish to thank all the sources, which are <a href="http://home.pacific.net.au/%7Egnb/gps/links.html#nmea">listed</a> on
+my GPS Links page.
+Please <a href="http://home.pacific.net.au/%7Egnb/index.html#contact">contact me</a>
+if you know of freely available interpretations of sentences which
+are not on this page.
+
+</p><p>[<a href="#top">Top</a>]</p><hr size="3">
+<address>Copyright © Glenn Baddeley 2007<br>
+http://home.pacific.net.au/~gnb/gps/nmea.html was last updated 13th June 2007.<br>
+Report problems and send comments to <a href="http://home.pacific.net.au/%7Egnb/index.html#contact">Glenn Baddeley</a>.
+</address>
+</body></html>

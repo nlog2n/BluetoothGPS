@@ -1,0 +1,63 @@
+# -*-n3-*-
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap:    <http://usefulinc.com/ns/doap#> .
+@prefix asc:     <http://aaronland.info/ns/changefile/> .
+                                     
+<>
+        dc:identifier           "$Id: Changes,v 1.4 2006/09/18 07:27:34 asc Exp $" ;
+        dc:description          "Changes for s60-nwtracker.py" ;
+        dcterms:references      <http://aaronland.info/python/nwtracker/> .
+
+<http://aaronland.info/python/nwtracker/s60-nwtracker-0.22.tar.gz>
+        dcterms:isVersionOf <http://aaronland.info/python/nwtracker/> ;
+        dcterms:replaces <http://aaronland.info/python/nwtracker/s60-nwtracker-0.21.tar.gz> ;   
+        doap:Version    [
+                        doap:revision     "0.22" ;
+                        doap:created      "2006-09-19" ;
+                        ];
+        asc:changes     [
+                        asc:bugfix        "Fixed so that logging works properly (for real)" ;
+                        asc:bugfix        "Various typos :-( " ;
+                        asc:update        "Updated POD" ;
+                        ] .
+
+<http://aaronland.info/python/nwtracker/s60-nwtracker-0.21.tar.gz>
+        dcterms:isVersionOf <http://aaronland.info/python/nwtracker/> ;
+        dcterms:replaces <http://aaronland.info/python/nwtracker/s60-nwtracker-0.2.tar.gz> ;   
+        doap:Version    [
+                        doap:revision     "0.21" ;
+                        doap:created      "2006-08-22" ;
+                        ];
+        asc:changes     [
+                        asc:bugfix        "Fixed so that logging works properly in emulation mode" ;
+                        ] .
+
+<http://aaronland.info/python/nwtracker/s60-nwtracker-0.2.tar.gz>
+        dcterms:isVersionOf <http://aaronland.info/python/nwtracker/> ;
+        dcterms:replaces <http://aaronland.info/python/nwtracker/s60-nwtracker-0.1.tar.gz> ;   
+        doap:Version    [
+                        doap:revision     "0.2" ;
+                        doap:created      "2006-08-14" ;
+                        ];
+        asc:changes     [
+                        asc:update        "Store/pass interval between polling in log messages" ;
+                        asc:update        "Updated documentation" ;
+                        asc:addition      "Added Changes file" ;
+                        ] .
+
+<http://aaronland.info/python/nwtracker/s60-nwtracker-0.1.tar.gz>
+        dcterms:isVersionOf <http://aaronland.info/python/nwtracker/> ;
+
+        doap:Version    [
+                        doap:revision     "0.1" ;
+                        doap:created      "2006-05-05" ;
+                        ];
+        asc:changes     [
+                        asc:comment       "Initial release." ;
+                        ] .
+
+<http://aaronland.info/python/nwtracker/>
+        a doap:Project ;
+        doap:download-mirror    "http://aaronland.info/python/nwtracker/" .
